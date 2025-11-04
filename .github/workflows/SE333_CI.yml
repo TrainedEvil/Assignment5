@@ -22,7 +22,7 @@ jobs:
 
       
       - name: Run Checkstyle
-        run: mvn checkstyle:checkstyle -Dcheckstyle.failOnViolation=false
+        run: mvn checkstyle:checkstyle "-Dcheckstyle.failOnViolation=false"
 
 
       
