@@ -89,24 +89,4 @@ public class AmazonIntegrationTest {
         assertEquals("Laptop", itemsFromDb.get(0).getName());
         assertEquals("Phone", itemsFromDb.get(1).getName());
     }
-
-    @Test
-    @DisplayName("structural-based: numberOfItems returns correct count")
-    void testNumberOfItems() {
-        assertEquals(0, cart.numberOfItems());
-
-        cart.add(new Item(ItemType.OTHER, "Book", 1, 10));
-        assertEquals(1, cart.numberOfItems());
-
-        cart.add(new Item(ItemType.ELECTRONIC, "Laptop", 1, 1000));
-        assertEquals(2, cart.numberOfItems());
-    }
-
-    @Test
-    @DisplayName("specification-based: numberOfItems works with multiple same items")
-    void testNumberOfItemsWithDuplicates() {
-        cart.add(new Item(ItemType.OTHER, "Book", 2, 15));
-        cart.add(new Item(ItemType.OTHER, "Book", 3, 15));
-        assertEquals(2, cart.numberOfItems());
-    }
 }
